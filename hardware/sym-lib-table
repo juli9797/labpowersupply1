@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name Custom)(type Legacy)(uri ${KIPRJMOD}/Custom.lib)(options "")(descr ""))
+  (lib (name tlv9064d)(type Legacy)(uri /home/jln/Projects/kicad-library-utils/tlv9064d.lib)(options "")(descr ""))
+)
