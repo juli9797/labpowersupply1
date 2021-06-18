@@ -45,9 +45,9 @@ Wire Wire Line
 	1850 1750 1850 1050
 Wire Wire Line
 	1850 2050 1850 2850
-Text GLabel 3000 1650 0    50   Input ~ 0
+Text GLabel 2800 1450 0    50   Input ~ 0
 U_control
-Text GLabel 3550 1450 0    50   Input ~ 0
+Text GLabel 3550 1650 0    50   Input ~ 0
 U_fb
 $Comp
 L Transistor_FET:BSS138 Q?
@@ -65,26 +65,21 @@ $EndComp
 $Comp
 L Device:R R?
 U 1 1 60FAA181
-P 3200 1650
+P 3000 1450
 AR Path="/60FAA181" Ref="R?"  Part="1" 
 AR Path="/60F7C4C5/60FAA181" Ref="R?"  Part="1" 
-F 0 "R?" V 2993 1650 50  0000 C CNN
-F 1 "R" V 3084 1650 50  0000 C CNN
-F 2 "" V 3130 1650 50  0001 C CNN
-F 3 "~" H 3200 1650 50  0001 C CNN
-	1    3200 1650
+F 0 "R?" V 2793 1450 50  0000 C CNN
+F 1 "R" V 2884 1450 50  0000 C CNN
+F 2 "" V 2930 1450 50  0001 C CNN
+F 3 "~" H 3000 1450 50  0001 C CNN
+	1    3000 1450
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	3350 1650 3500 1650
-Connection ~ 3500 1650
-Wire Wire Line
-	3500 1650 3550 1650
 Wire Wire Line
 	3500 2650 3500 2850
 Connection ~ 3500 2850
 Wire Wire Line
-	3000 1650 3050 1650
+	2800 1450 2850 1450
 Text GLabel 8950 2850 2    50   Input ~ 0
 -
 Text GLabel 8950 1050 2    50   Input ~ 0
@@ -176,21 +171,6 @@ F 3 "~" H 4300 1550 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	3500 1650 3500 2250
-$Comp
-L Transistor_BJT:2N3055 Q?
-U 1 1 60FAA1C0
-P 5350 1150
-AR Path="/60FAA1C0" Ref="Q?"  Part="1" 
-AR Path="/60F7C4C5/60FAA1C0" Ref="Q?"  Part="1" 
-F 0 "Q?" V 5678 1150 50  0000 C CNN
-F 1 "2N3055" V 5587 1150 50  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-3" H 5550 1075 50  0001 L CIN
-F 3 "http://www.onsemi.com/pub_link/Collateral/2N3055-D.PDF" H 5350 1150 50  0001 L CNN
-	1    5350 1150
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
 	5550 1050 5700 1050
 $Comp
 L Device:R R?
@@ -246,12 +226,6 @@ Wire Wire Line
 Wire Wire Line
 	6300 1600 7200 1600
 Wire Wire Line
-	4450 1550 5350 1550
-Wire Wire Line
-	5350 1550 5350 1350
-Wire Wire Line
-	3500 2850 6300 2850
-Wire Wire Line
 	6100 1050 7900 1050
 Wire Wire Line
 	6300 2200 6300 2850
@@ -268,8 +242,6 @@ Connection ~ 1850 1050
 Connection ~ 1850 2850
 Wire Wire Line
 	1850 2850 3500 2850
-Wire Wire Line
-	1850 1050 5150 1050
 $Comp
 L Device:C C?
 U 1 1 60FBD1EB
@@ -628,9 +600,9 @@ MOSI
 Text GLabel 9700 5450 0    50   Input ~ 0
 MOSI
 Text GLabel 7850 4050 2    50   Input ~ 0
-CS_DAC_U_fb
+CS_ADC_U_fb
 Text GLabel 7850 5200 2    50   Input ~ 0
-CS_DAC_I_fb
+CS_ADC_I_fb
 $Comp
 L Custom:TLV9064D U?
 U 1 1 60C1757F
@@ -738,4 +710,99 @@ Text Notes 6850 3450 0    118  ~ 0
 ADC
 Text Notes 9250 3450 0    118  ~ 0
 DAC
+$Comp
+L Transistor_BJT:BC547 Q?
+U 1 1 60C794F6
+P 4800 1850
+F 0 "Q?" H 4991 1896 50  0000 L CNN
+F 1 "BC547" H 4991 1805 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 5000 1775 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BC550-D.pdf" H 4800 1850 50  0001 L CNN
+	1    4800 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 1550 4450 1550
+$Comp
+L Device:R Re
+U 1 1 60C8771A
+P 4900 2700
+F 0 "Re" H 4970 2746 50  0000 L CNN
+F 1 "1k" H 4970 2655 50  0000 L CNN
+F 2 "" V 4830 2700 50  0001 C CNN
+F 3 "~" H 4900 2700 50  0001 C CNN
+	1    4900 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 2850 4900 2850
+Connection ~ 4900 2850
+Wire Wire Line
+	4900 2850 6300 2850
+Wire Wire Line
+	1850 1050 4900 1050
+$Comp
+L Transistor_BJT:2N3055 Q?
+U 1 1 60FAA1C0
+P 5350 1150
+AR Path="/60FAA1C0" Ref="Q?"  Part="1" 
+AR Path="/60F7C4C5/60FAA1C0" Ref="Q?"  Part="1" 
+F 0 "Q?" V 5678 1150 50  0000 C CNN
+F 1 "2N3055" V 5587 1150 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-3" H 5550 1075 50  0001 L CIN
+F 3 "http://www.onsemi.com/pub_link/Collateral/2N3055-D.PDF" H 5350 1150 50  0001 L CNN
+	1    5350 1150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60CE3B3A
+P 4900 1350
+AR Path="/60CE3B3A" Ref="R?"  Part="1" 
+AR Path="/60F7C4C5/60CE3B3A" Ref="R?"  Part="1" 
+F 0 "R?" V 4693 1350 50  0000 C CNN
+F 1 "Rc" V 4784 1350 50  0000 C CNN
+F 2 "" V 4830 1350 50  0001 C CNN
+F 3 "~" H 4900 1350 50  0001 C CNN
+	1    4900 1350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4900 1200 4900 1050
+Connection ~ 4900 1050
+Wire Wire Line
+	4900 1050 5150 1050
+Wire Wire Line
+	4900 1500 4900 1600
+Wire Wire Line
+	4900 2550 4900 2050
+Wire Wire Line
+	4600 1550 4600 1850
+Wire Wire Line
+	4900 1600 5350 1600
+Wire Wire Line
+	5350 1600 5350 1350
+Connection ~ 4900 1600
+Wire Wire Line
+	4900 1600 4900 1650
+Text Notes 4950 2500 0    50   ~ 0
+Small signal\nemitter degeneration:\nimproves gain stability:\nAv = (-gm Rc)/(gm Re +1)\napprox: -Rc/Re\n
+Text Notes 4000 1950 0    50   ~ 0
+bias this badboy
+Wire Wire Line
+	3150 1450 3250 1450
+Wire Wire Line
+	3500 2250 3500 1950
+Wire Wire Line
+	3500 1950 3250 1950
+Wire Wire Line
+	3250 1950 3250 1450
+Connection ~ 3250 1450
+Wire Wire Line
+	3250 1450 3550 1450
+Text GLabel 2900 2300 1    50   Input ~ 0
+OverCurrent
+Wire Wire Line
+	2900 2300 2900 2450
+Connection ~ 2900 2450
 $EndSCHEMATC

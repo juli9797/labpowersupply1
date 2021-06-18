@@ -1,0 +1,541 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:Rotary_Encoder_Switch SW?
+U 1 1 60C21E17
+P 9400 1850
+F 0 "SW?" H 9400 2217 50  0000 C CNN
+F 1 "Rotary_Encoder_Switch" H 9400 2126 50  0000 C CNN
+F 2 "" H 9250 2010 50  0001 C CNN
+F 3 "~" H 9400 2110 50  0001 C CNN
+	1    9400 1850
+	1    0    0    -1  
+$EndComp
+Text Notes 2500 4400 0    50   ~ 0
+Module 1
+$Comp
+L Custom:Bluepill_STM32 U?
+U 1 1 6110CEA7
+P 6450 4400
+F 0 "U?" H 6450 5615 50  0000 C CNN
+F 1 "Bluepill_STM32" H 6450 5524 50  0000 C CNN
+F 2 "" H 6450 5500 50  0001 C CNN
+F 3 "" H 6450 5500 50  0001 C CNN
+	1    6450 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 6111ACF6
+P 10100 1900
+F 0 "C?" H 10215 1946 50  0000 L CNN
+F 1 "100n" H 10215 1855 50  0000 L CNN
+F 2 "" H 10138 1750 50  0001 C CNN
+F 3 "~" H 10100 1900 50  0001 C CNN
+	1    10100 1900
+	1    0    0    -1  
+$EndComp
+Text GLabel 6950 3450 2    50   Input ~ 0
+3V3
+Text GLabel 10100 1450 1    50   Input ~ 0
+3V3
+$Comp
+L Device:R R?
+U 1 1 61124C56
+P 10100 1600
+F 0 "R?" H 10170 1646 50  0000 L CNN
+F 1 "10k" H 10170 1555 50  0000 L CNN
+F 2 "" V 10030 1600 50  0001 C CNN
+F 3 "~" H 10100 1600 50  0001 C CNN
+	1    10100 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6112CCC0
+P 10100 2050
+F 0 "#PWR?" H 10100 1800 50  0001 C CNN
+F 1 "GND" H 10105 1877 50  0000 C CNN
+F 2 "" H 10100 2050 50  0001 C CNN
+F 3 "" H 10100 2050 50  0001 C CNN
+	1    10100 2050
+	1    0    0    -1  
+$EndComp
+Text GLabel 10250 1750 2    50   Input ~ 0
+SW_Rot
+Connection ~ 10100 1750
+Wire Wire Line
+	10250 1750 10100 1750
+Connection ~ 10100 2050
+$Comp
+L Device:R R?
+U 1 1 61142505
+P 9850 1750
+F 0 "R?" V 9643 1750 50  0000 C CNN
+F 1 "1k" V 9734 1750 50  0000 C CNN
+F 2 "" V 9780 1750 50  0001 C CNN
+F 3 "~" H 9850 1750 50  0001 C CNN
+	1    9850 1750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	10000 1750 10100 1750
+Wire Wire Line
+	9700 1950 9700 2050
+Wire Wire Line
+	9700 2050 10100 2050
+Text GLabel 6950 3750 2    50   Input ~ 0
+SW_Rot
+Text GLabel 9100 1950 0    50   Input ~ 0
+ROT_B
+Text GLabel 9100 1750 0    50   Input ~ 0
+ROT_A
+$Comp
+L power:GND #PWR?
+U 1 1 6115475D
+P 8700 1900
+F 0 "#PWR?" H 8700 1650 50  0001 C CNN
+F 1 "GND" H 8705 1727 50  0000 C CNN
+F 2 "" H 8700 1900 50  0001 C CNN
+F 3 "" H 8700 1900 50  0001 C CNN
+	1    8700 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8700 1900 8700 1850
+Wire Wire Line
+	8700 1850 9100 1850
+Text GLabel 6950 3850 2    50   Input ~ 0
+ROT_A
+Text GLabel 6950 3950 2    50   Input ~ 0
+ROT_B
+Text GLabel 2400 4650 0    50   Input ~ 0
+5V
+Text GLabel 2400 4750 0    50   Input ~ 0
+3V3
+$Comp
+L power:GND #PWR?
+U 1 1 611B9B7C
+P 1950 4850
+F 0 "#PWR?" H 1950 4600 50  0001 C CNN
+F 1 "GND" H 1955 4677 50  0000 C CNN
+F 2 "" H 1950 4850 50  0001 C CNN
+F 3 "" H 1950 4850 50  0001 C CNN
+	1    1950 4850
+	1    0    0    -1  
+$EndComp
+Text GLabel 2400 4950 0    50   Input ~ 0
+CLK_1
+Text GLabel 2400 5050 0    50   Input ~ 0
+MOSI_1
+Text GLabel 2400 5150 0    50   Input ~ 0
+MISO_1
+Text GLabel 2400 5250 0    50   Input ~ 0
+CS_DAC_U_1
+Text GLabel 2900 4650 2    50   Input ~ 0
+CD_DAC_I_1
+Text GLabel 2900 4750 2    50   Input ~ 0
+CS_ADC_U_fb_1
+Text GLabel 2900 4850 2    50   Input ~ 0
+CS_ADC_I_fb_1
+Text GLabel 2900 4950 2    50   Input ~ 0
+CS_ADC_U_buck_1
+Text GLabel 2900 5050 2    50   Input ~ 0
+CS_DAC_U_buck_1
+Text Notes 3700 2950 0    50   ~ 0
+uA78M33DCY\n
+$Comp
+L Connector:Conn_01x04_Female J?
+U 1 1 611D962C
+P 9600 900
+F 0 "J?" H 9628 876 50  0000 L CNN
+F 1 "Conn_01x04_Female" H 9628 785 50  0000 L CNN
+F 2 "" H 9600 900 50  0001 C CNN
+F 3 "~" H 9600 900 50  0001 C CNN
+	1    9600 900 
+	1    0    0    -1  
+$EndComp
+Text GLabel 9400 800  0    50   Input ~ 0
+SDA
+Text GLabel 9400 900  0    50   Input ~ 0
+CLK
+Text GLabel 9400 1000 0    50   Input ~ 0
+3V3
+Text GLabel 9400 1100 0    50   Input ~ 0
+GND
+Text Notes 8950 650  0    50   ~ 0
+SSD1306 Display
+Text GLabel 2900 5150 2    50   Input ~ 0
+OUTPUT_EN_1
+$Comp
+L Connector_Generic:Conn_02x07_Counter_Clockwise J?
+U 1 1 611E224B
+P 2600 4950
+F 0 "J?" H 2650 5467 50  0000 C CNN
+F 1 "Conn_02x07_Counter_Clockwise" H 2650 5376 50  0000 C CNN
+F 2 "" H 2600 4950 50  0001 C CNN
+F 3 "~" H 2600 4950 50  0001 C CNN
+	1    2600 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 61210F3B
+P 9050 4300
+F 0 "D?" V 9089 4182 50  0000 R CNN
+F 1 "LED" V 8998 4182 50  0000 R CNN
+F 2 "" H 9050 4300 50  0001 C CNN
+F 3 "~" H 9050 4300 50  0001 C CNN
+	1    9050 4300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 61212633
+P 9750 4300
+F 0 "D?" V 9789 4182 50  0000 R CNN
+F 1 "LED" V 9698 4182 50  0000 R CNN
+F 2 "" H 9750 4300 50  0001 C CNN
+F 3 "~" H 9750 4300 50  0001 C CNN
+	1    9750 4300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 61213086
+P 10500 4300
+F 0 "D?" V 10539 4182 50  0000 R CNN
+F 1 "LED" V 10448 4182 50  0000 R CNN
+F 2 "" H 10500 4300 50  0001 C CNN
+F 3 "~" H 10500 4300 50  0001 C CNN
+	1    10500 4300
+	0    -1   -1   0   
+$EndComp
+Text Notes 9100 4000 1    50   ~ 0
+POWER
+Text Notes 9800 4000 1    50   ~ 0
+Out 1 EN
+Text Notes 10500 4000 1    50   ~ 0
+Out 2 EN
+$Comp
+L Transistor_FET:BSS138 Q?
+U 1 1 61216EAF
+P 8950 4950
+F 0 "Q?" H 9154 4996 50  0000 L CNN
+F 1 "BSS138" H 9154 4905 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 9150 4875 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF" H 8950 4950 50  0001 L CNN
+	1    8950 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:BSS138 Q?
+U 1 1 6121A334
+P 9650 4950
+F 0 "Q?" H 9854 4996 50  0000 L CNN
+F 1 "BSS138" H 9854 4905 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 9850 4875 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF" H 9650 4950 50  0001 L CNN
+	1    9650 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:BSS138 Q?
+U 1 1 6121EE6F
+P 10400 4950
+F 0 "Q?" H 10604 4996 50  0000 L CNN
+F 1 "BSS138" H 10604 4905 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 10600 4875 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF" H 10400 4950 50  0001 L CNN
+	1    10400 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9050 4150 8750 4150
+Text GLabel 8750 4150 0    50   Input ~ 0
+3V3
+$Comp
+L Device:R R?
+U 1 1 612349A2
+P 9050 4600
+F 0 "R?" H 9120 4646 50  0000 L CNN
+F 1 "R" H 9120 4555 50  0000 L CNN
+F 2 "" V 8980 4600 50  0001 C CNN
+F 3 "~" H 9050 4600 50  0001 C CNN
+	1    9050 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6123A527
+P 9750 4600
+F 0 "R?" H 9820 4646 50  0000 L CNN
+F 1 "R" H 9820 4555 50  0000 L CNN
+F 2 "" V 9680 4600 50  0001 C CNN
+F 3 "~" H 9750 4600 50  0001 C CNN
+	1    9750 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6123ABD7
+P 10500 4600
+F 0 "R?" H 10570 4646 50  0000 L CNN
+F 1 "R" H 10570 4555 50  0000 L CNN
+F 2 "" V 10430 4600 50  0001 C CNN
+F 3 "~" H 10500 4600 50  0001 C CNN
+	1    10500 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9050 5150 9050 5350
+Wire Wire Line
+	9050 5350 9750 5350
+Wire Wire Line
+	10500 5350 10500 5150
+Wire Wire Line
+	9750 5150 9750 5350
+Connection ~ 9750 5350
+Wire Wire Line
+	9750 5350 10500 5350
+$Comp
+L power:GND #PWR?
+U 1 1 6127FC86
+P 9750 5350
+F 0 "#PWR?" H 9750 5100 50  0001 C CNN
+F 1 "GND" H 9755 5177 50  0000 C CNN
+F 2 "" H 9750 5350 50  0001 C CNN
+F 3 "" H 9750 5350 50  0001 C CNN
+	1    9750 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9050 4150 9750 4150
+Connection ~ 9050 4150
+Connection ~ 9750 4150
+Wire Wire Line
+	9750 4150 10500 4150
+Text GLabel 8750 4950 0    50   Input ~ 0
+3V3
+Wire Wire Line
+	1950 4850 2400 4850
+Text GLabel 9450 4950 1    50   Input ~ 0
+OUTPUT_EN_1
+Text GLabel 10200 4950 1    50   Input ~ 0
+OUTPUT_EN_2
+Text GLabel 6950 4350 2    50   Input ~ 0
+CLK_1
+Text GLabel 6950 4150 2    50   Input ~ 0
+MOSI_1
+Text GLabel 6950 4250 2    50   Input ~ 0
+MISO_1
+Text GLabel 6950 5250 2    50   Input ~ 0
+CLK_2
+Text GLabel 6950 5050 2    50   Input ~ 0
+MOSI_2
+Text GLabel 6950 5150 2    50   Input ~ 0
+MISO_2
+$Comp
+L power:GND #PWR?
+U 1 1 6132BD05
+P 7400 3550
+F 0 "#PWR?" H 7400 3300 50  0001 C CNN
+F 1 "GND" H 7405 3377 50  0000 C CNN
+F 2 "" H 7400 3550 50  0001 C CNN
+F 3 "" H 7400 3550 50  0001 C CNN
+	1    7400 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 3550 6950 3550
+$Comp
+L power:GND #PWR?
+U 1 1 6132CAEA
+P 5850 5350
+F 0 "#PWR?" H 5850 5100 50  0001 C CNN
+F 1 "GND" H 5855 5177 50  0000 C CNN
+F 2 "" H 5850 5350 50  0001 C CNN
+F 3 "" H 5850 5350 50  0001 C CNN
+	1    5850 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5850 5350 5950 5350
+Wire Wire Line
+	5950 5250 5950 5350
+Connection ~ 5950 5350
+Text GLabel 6950 4550 2    50   Input ~ 0
+CD_DAC_I_1
+Text GLabel 6950 4650 2    50   Input ~ 0
+CS_ADC_U_fb_1
+Text GLabel 6950 4750 2    50   Input ~ 0
+CS_ADC_I_fb_1
+Text GLabel 6950 4950 2    50   Input ~ 0
+CS_DAC_U_buck_1
+Text GLabel 6950 4450 2    50   Input ~ 0
+CS_DAC_U_1
+Text GLabel 6950 4850 2    50   Input ~ 0
+CS_ADC_U_buck_1
+Wire Notes Line
+	7800 5000 7800 4100
+Wire Notes Line
+	7800 4100 7750 4100
+Wire Notes Line
+	7800 5000 7750 5000
+Text Notes 7900 4700 1    50   ~ 0
+MODULE 1\n
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 6135C31D
+P 10200 2500
+F 0 "J?" H 10228 2476 50  0000 L CNN
+F 1 "Conn_01x02_Female" H 10228 2385 50  0000 L CNN
+F 2 "" H 10200 2500 50  0001 C CNN
+F 3 "~" H 10200 2500 50  0001 C CNN
+	1    10200 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6135ECBC
+P 10000 2600
+F 0 "#PWR?" H 10000 2350 50  0001 C CNN
+F 1 "GND" H 10005 2427 50  0000 C CNN
+F 2 "" H 10000 2600 50  0001 C CNN
+F 3 "" H 10000 2600 50  0001 C CNN
+	1    10000 2600
+	1    0    0    -1  
+$EndComp
+Text GLabel 10000 2500 0    50   Input ~ 0
+SW_1
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 613617AA
+P 10200 2950
+F 0 "J?" H 10228 2926 50  0000 L CNN
+F 1 "Conn_01x02_Female" H 10228 2835 50  0000 L CNN
+F 2 "" H 10200 2950 50  0001 C CNN
+F 3 "~" H 10200 2950 50  0001 C CNN
+	1    10200 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 613617B0
+P 10000 3050
+F 0 "#PWR?" H 10000 2800 50  0001 C CNN
+F 1 "GND" H 10005 2877 50  0000 C CNN
+F 2 "" H 10000 3050 50  0001 C CNN
+F 3 "" H 10000 3050 50  0001 C CNN
+	1    10000 3050
+	1    0    0    -1  
+$EndComp
+Text GLabel 10000 2950 0    50   Input ~ 0
+SW_2
+$Comp
+L Converter_ACDC:IRM-05-5 PS?
+U 1 1 6138FF2C
+P 2300 3750
+F 0 "PS?" H 2300 4117 50  0000 C CNN
+F 1 "IRM-05-5" H 2300 4026 50  0000 C CNN
+F 2 "Converter_ACDC:Converter_ACDC_MeanWell_IRM-05-xx_THT" H 2300 3400 50  0001 C CNN
+F 3 "https://www.meanwell.com/Upload/PDF/IRM-05/IRM-05-SPEC.PDF" H 2300 3350 50  0001 C CNN
+	1    2300 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 3650 1900 3650
+Wire Wire Line
+	1650 3750 1900 3750
+Wire Wire Line
+	1900 3750 1900 3850
+$Comp
+L Connector:Conn_01x03_Female J?
+U 1 1 6139C3F5
+P 1450 3750
+F 0 "J?" H 1478 3776 50  0000 L CNN
+F 1 "Conn_01x03_Female" H 1478 3685 50  0000 L CNN
+F 2 "" H 1450 3750 50  0001 C CNN
+F 3 "~" H 1450 3750 50  0001 C CNN
+	1    1450 3750
+	-1   0    0    -1  
+$EndComp
+Text GLabel 1650 3850 3    50   Input ~ 0
+EARTH
+Text GLabel 2750 3650 1    50   Input ~ 0
+5V
+$Comp
+L power:GND #PWR?
+U 1 1 613AB4FA
+P 2750 3850
+F 0 "#PWR?" H 2750 3600 50  0001 C CNN
+F 1 "GND" H 2755 3677 50  0000 C CNN
+F 2 "" H 2750 3850 50  0001 C CNN
+F 3 "" H 2750 3850 50  0001 C CNN
+	1    2750 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 3850 2750 3850
+Wire Wire Line
+	2750 3650 2700 3650
+Text Notes 1150 3500 0    50   ~ 0
+110-250V AC
+$Comp
+L Connector:USB_B_Micro J?
+U 1 1 613BB4BC
+P 1550 1450
+F 0 "J?" H 1607 1917 50  0000 C CNN
+F 1 "USB_B_Micro" H 1607 1826 50  0000 C CNN
+F 2 "" H 1700 1400 50  0001 C CNN
+F 3 "~" H 1700 1400 50  0001 C CNN
+	1    1550 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Interface_USB:CH340C U?
+U 1 1 613D88D9
+P 3050 1550
+F 0 "U?" H 3050 861 50  0000 C CNN
+F 1 "CH340C" H 3050 770 50  0000 C CNN
+F 2 "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" H 3100 1000 50  0001 L CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Jiangsu-Qin-Heng-CH340C_C84681.pdf" H 2700 2350 50  0001 C CNN
+	1    3050 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 1550 1850 1550
+Wire Wire Line
+	1850 1450 2650 1450
+Wire Wire Line
+	1550 1850 1550 2150
+Wire Wire Line
+	1550 2150 2400 2150
+$Comp
+L power:GND #PWR?
+U 1 1 613DF1B7
+P 2400 2150
+F 0 "#PWR?" H 2400 1900 50  0001 C CNN
+F 1 "GND" H 2405 1977 50  0000 C CNN
+F 2 "" H 2400 2150 50  0001 C CNN
+F 3 "" H 2400 2150 50  0001 C CNN
+	1    2400 2150
+	1    0    0    -1  
+$EndComp
+Connection ~ 2400 2150
+Wire Wire Line
+	2400 2150 3050 2150
+$EndSCHEMATC
