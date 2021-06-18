@@ -1,6 +1,7 @@
 # labpowersupply1
 
 This is a simple powersupply with a switch mode and linear stage.
+
 Design Goals:
 
 * cheap
